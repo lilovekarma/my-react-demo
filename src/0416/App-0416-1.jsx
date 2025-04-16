@@ -96,7 +96,7 @@ function App() {
                                                         {/* icon */}
                                                         <i className="bi bi-umbrella">
                                                             {/* 10% */}
-                                                            {city.weatherElement[4].time[index].parameter.parameterName}
+                                                            {city.weatherElement[4].time[index].parameter.parameterName}%
                                                         </i>
                                                     </div>
                                                 </div>
