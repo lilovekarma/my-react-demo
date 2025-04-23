@@ -1,0 +1,67 @@
+/* 外框包住按鈕，處理光線 */
+.shiny-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+/* 光線動畫層 */
+.shiny-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* hover時流光動畫啟動 */
+.shiny-wrapper:hover::before {
+  opacity: 1;
+  animation: shineMove 1.5s linear forwards;
+}
+
+/* 流光從左到右動畫 */
+@keyframes shineMove {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* 按鈕本體，只負責文字跟基本樣式 */
+.shiny-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  font-family: 'Satoshi', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  z-index: 1; /* 保證文字永遠最上層 */
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+/* hover時按鈕本身背景稍微亮一點 */
+.shiny-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
