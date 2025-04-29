@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            width: 1000px;
+            height: 1000px;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: blue;
+        }
+
+        .btn {
+            background-color: rgb(255, 85, 0);
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">
+        <h2>歡迎來到第一頁</h2>
+    </div>
+    <div id="two">
+        <h2>歡迎來到第二頁</h2>
+    </div>
+    <div id="three">
+        <h2>歡迎來到第三頁</h2>
+    </div>
+    <button onclick="changeOne();" class="btn" id="btn">第一步</button>
+    <button onclick="changeTwo1();" class="btn" id="btn1">第二步</button>
+    <button onclick="changeTwo2();" class="btn" id="btn2">完成</button>
+
+    <script>
+        let one = document.querySelector("#one");
+        let two = document.querySelector("#two");
+        let three = document.querySelector("#three");
+        two.style.display = "none";
+        three.style.display = "none";
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        btn1.style.display = "none";
+        btn2.style.display = "none";
+        function changeOne() {
+            //隱藏第一頁及按鈕btn
+            let one = document.querySelector("#one");
+            one.style.display = "none";
+            //顯示第二頁
+            let two = document.querySelector("#two");
+            two.style.display = "block";
+            let btn1 = document.querySelector("#btn1");
+            btn1.style.display = "block";
+           
+        }
+        function changeTwo1() {
+            //隱藏第一二頁,及第一步
+            let one = document.querySelector("#one");
+            one.style.display = "none";
+            let two = document.querySelector("#two");
+            two.style.display = "none";
+            let btn = document.querySelector("#btn");
+            btn.style.display = "none";
+
+            //顯示第三頁
+            let three = document.querySelector("#three");
+            three.style.display = "block";
+            let btn2 = document.querySelector("#btn2");
+            btn2.style.display = "block";
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
